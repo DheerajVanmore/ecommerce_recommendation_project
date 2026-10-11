@@ -1,0 +1,52 @@
+================================================================================
+BIG DATA ANALYTICS (BDA) - RECOMMENDER SYSTEM EMPIRICAL BENCHMARK RESULTS
+Course: BE Sem-7 Big Data Analytics | Assignment No-10
+Problem Domain: E-Commerce Recommendation System
+================================================================================
+
+1. SYSTEM & DATASET PROFILE
+--------------------------------------------------------------------------------
+- Product Catalog Size (|I|): 20 items
+- Product Categories: 7 distinct domains (Electronics, Wearables, Accessories, 
+  Fashion, Fitness, Lifestyle, Home)
+- Evaluation Metric Cutoff: Top-K = 5
+- Feature Engineering: TF-IDF n-grams (1, 2) over Product Name, Category, Brand, Description
+- Vector Space: Cosine Similarity Matrix (Sparse pairwise item similarity)
+- Quality/Popularity Blending: 0.70 log1p(purchases) + 0.30 min_max(rating)
+
+2. QUERY LATENCY BENCHMARK (In-Memory Inference)
+--------------------------------------------------------------------------------
+- Total Catalog Query Time (20 exhaustive queries): 117.73 ms
+- Mean Latency per Item Query: 5.887 ms
+- Throughput: ~170 recommendations / second (single-threaded CPU)
+
+3. SENSITIVITY ANALYSIS: CONTENT SIMILARITY WEIGHT (alpha)
+--------------------------------------------------------------------------------
+Formula: Score = alpha * Cosine_Similarity + (1 - alpha) * Popularity_Score
+
+Similarity Weight (alpha) | Category Precision@5 | Catalog Coverage (%) | Intra-List Diversity | Unique Items Rec'd
+--------------------------+----------------------+----------------------+----------------------+-------------------
+0.1 (Popularity Dominant) | 24.0%                | 30.0%                | 0.982                | 6 / 20
+0.3                       | 25.0%                | 35.0%                | 0.983                | 7 / 20
+0.5 (Balanced)            | 27.0%                | 50.0%                | 0.982                | 10 / 20
+0.7 (Default Setting)     | 27.0%                | 60.0%                | 0.982                | 12 / 20
+0.9 (Content Dominant)    | 33.0%                | 100.0%               | 0.982                | 20 / 20
+
+KEY EMPIRICAL OBSERVATION:
+- Low alpha (0.1) introduces severe popularity bias, recommending only 6 dominant popular items across all user queries (30% catalog coverage).
+- Default alpha (0.7) achieves a balanced trade-off: 60% coverage, strong relevance, while factoring in item quality.
+- High alpha (0.9) maximizes niche discovery and category precision (33%), achieving 100% catalog coverage.
+
+4. BIG DATA SCALABILITY BOTTLENECK ANALYSIS
+--------------------------------------------------------------------------------
+Matrix Sparsity on 5,000 interactions (1,000 users x 20 products): 79.56%
+
+Scalability Matrix (Dense Cosine Similarity vs Big Data Distributed Engine):
+Catalog Size (N) | Dense Matrix Size (GB) | Single-Node RAM Feasibility | Recommended Engine
+-----------------+------------------------+-----------------------------+---------------------------------------
+100              | 0.00 GB                | Feasible                    | Single-Node Pandas / Scikit-Learn
+10,000           | 0.37 GB                | Feasible                    | Single-Node Pandas / Scikit-Learn
+100,000          | 37.25 GB               | Out of Memory (OOM)         | Apache Spark MLlib RDD / GraphX
+1,000,000        | 3.6 TB                 | Out of Memory (OOM)         | Distributed Spark ALS / Milvus Vector DB
+10,000,000       | 363.8 TB               | Out of Memory (OOM)         | Distributed Spark Cluster / Two-Tower ANN
+================================================================================

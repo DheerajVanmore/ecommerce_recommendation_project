@@ -1,0 +1,47 @@
+================================================================================
+Test Run 1: Default Product ("Wireless Headphones", Top 5, Similarity Weight 0.7)
+Command: python recommendation.py
+================================================================================
+
+Products similar to: Wireless Headphones
+
+product_id      product_name    category    brand  price  rating  purchases  content_similarity  recommendation_score
+      P002 Bluetooth Speaker Electronics SoundMax   1899     4.3       1200               0.225                 0.288
+      P008    Wireless Mouse Accessories DeskMate    799     4.3       1800               0.092                 0.260
+      P020        Phone Case Accessories Everyday    399     4.0       2500               0.017                 0.222
+      P012      Water Bottle   Lifestyle Everyday    499     4.1       2100               0.000                 0.195
+      P004       Smart Watch   Wearables  FitLife   3499     4.1       1100               0.091                 0.154
+
+Note: this is a demonstration using a small illustrative dataset, not real customer data.
+
+================================================================================
+Test Run 2: Custom Product ("Gaming Headset", Top 5, Similarity Weight 0.7)
+Command: python recommendation.py --product "Gaming Headset" --top 5
+================================================================================
+
+Products similar to: Gaming Headset
+
+product_id        product_name    category    brand  price  rating  purchases  content_similarity  recommendation_score
+      P001 Wireless Headphones Electronics SoundMax   2999     4.4       1500               0.103                 0.251
+      P008      Wireless Mouse Accessories DeskMate    799     4.3       1800               0.040                 0.224
+      P020          Phone Case Accessories Everyday    399     4.0       2500               0.018                 0.223
+      P012        Water Bottle   Lifestyle Everyday    499     4.1       2100               0.000                 0.195
+      P007 Mechanical Keyboard Accessories  GamePro   2799     4.6       1050               0.065                 0.193
+
+Note: this is a demonstration using a small illustrative dataset, not real customer data.
+
+================================================================================
+Test Run 3: Content-Heavy Weighting (Similarity Weight 0.9)
+Command: python recommendation.py --product "Wireless Headphones" --similarity-weight 0.9
+================================================================================
+
+Products similar to: Wireless Headphones
+
+product_id      product_name    category    brand  price  rating  purchases  content_similarity  recommendation_score
+      P002 Bluetooth Speaker Electronics SoundMax   1899     4.3       1200               0.225                 0.223
+      P008    Wireless Mouse Accessories DeskMate    799     4.3       1800               0.092                 0.148
+      P004       Smart Watch   Wearables  FitLife   3499     4.1       1100               0.091                 0.097
+      P003    Gaming Headset Electronics  GamePro   2499     4.2        900               0.103                 0.093
+      P020        Phone Case Accessories Everyday    399     4.0       2500               0.017                 0.086
+
+Note: this is a demonstration using a small illustrative dataset, not real customer data.

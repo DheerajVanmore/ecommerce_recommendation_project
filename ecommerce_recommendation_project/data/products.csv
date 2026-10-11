@@ -1,0 +1,21 @@
+product_id,product_name,category,brand,description,price,rating,review_count,purchases
+P001,Wireless Headphones,Electronics,SoundMax,"Bluetooth wireless headphones with noise cancellation, deep bass, long battery life, and comfortable ear cushions.",2999,4.4,820,1500
+P002,Bluetooth Speaker,Electronics,SoundMax,"Portable Bluetooth speaker with powerful bass, waterproof design, and long battery life for music outdoors.",1899,4.3,610,1200
+P003,Gaming Headset,Electronics,GamePro,"Over-ear gaming headset with surround sound, microphone, noise isolation, and comfortable cushions.",2499,4.2,430,900
+P004,Smart Watch,Wearables,FitLife,"Smart watch with fitness tracking, heart rate monitoring, sleep tracking, notifications, and long battery life.",3499,4.1,700,1100
+P005,Fitness Band,Wearables,FitLife,"Lightweight fitness band for step counting, heart rate tracking, sleep monitoring, and workout activity.",1599,4.0,560,980
+P006,Laptop Stand,Accessories,DeskMate,"Adjustable aluminium laptop stand for ergonomic posture, desk organization, ventilation, and remote work.",999,4.5,390,750
+P007,Mechanical Keyboard,Accessories,GamePro,"Mechanical keyboard with tactile switches, RGB lighting, durable keycaps, and a layout for gaming and typing.",2799,4.6,520,1050
+P008,Wireless Mouse,Accessories,DeskMate,"Ergonomic wireless mouse with adjustable DPI, quiet clicks, and reliable connectivity for office work and gaming.",799,4.3,940,1800
+P009,USB-C Hub,Accessories,ConnectIt,"Multiport USB-C hub with HDMI, USB ports, card reader, and power delivery for laptop connectivity.",1299,4.2,310,680
+P010,Running Shoes,Fashion,Stride,"Lightweight running shoes with breathable mesh, cushioned soles, flexible support, and a design for daily workouts.",2299,4.2,860,1400
+P011,Yoga Mat,Fitness,FitLife,"Non-slip exercise yoga mat with cushioning for stretching, home workouts, meditation, and yoga sessions.",699,4.4,480,920
+P012,Water Bottle,Lifestyle,Everyday,"Reusable insulated stainless steel water bottle for travel, gym, outdoor activities, and daily hydration.",499,4.1,1020,2100
+P013,Travel Backpack,Lifestyle,Everyday,"Durable travel backpack with laptop compartment, multiple pockets, padded straps, and storage for commuting.",1799,4.3,670,1150
+P014,Desk Lamp,Home,BrightHome,"LED desk lamp with adjustable brightness, flexible neck, low-glare lighting, and a compact design for studying.",899,4.5,350,720
+P015,Coffee Maker,Home,BrewEasy,"Compact coffee maker for fresh coffee at home with simple controls, quick brewing, and an easy-clean design.",2499,4.1,440,810
+P016,External SSD,Electronics,ConnectIt,"Portable external solid-state drive for fast file transfers, backups, storage expansion, and moving large files.",4999,4.7,380,690
+P017,Webcam,Electronics,ConnectIt,"Full HD webcam for online meetings, video calls, streaming, and remote learning with clear video quality.",2199,4.2,590,990
+P018,Monitor,Electronics,BrightHome,"Full HD computer monitor for productivity, online classes, coding, entertainment, and comfortable desk setups.",8999,4.5,410,780
+P019,Power Bank,Accessories,ConnectIt,"Portable power bank with fast charging, high capacity, and multiple ports for phones and travel devices.",1499,4.3,760,1300
+P020,Phone Case,Accessories,Everyday,"Protective smartphone case with shock absorption, a slim profile, raised edges, and a comfortable grip.",399,4.0,1300,2500
